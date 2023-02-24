@@ -23,9 +23,9 @@
 
 //CODE HERE
 
+const greetUser = username => `Welcome back, ${username}`
 
-
-
+// console.log(greetUser('Andrew'))
 
 //////////////////PROBLEM 2////////////////////
 /* 
@@ -50,7 +50,13 @@
 const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
 //CODE HERE
-
+const canWeDeliver = zipCode => {
+    if (deliveryAreaZipCodes.includes(zipCode)) {
+        return `Zip code ${zipCode} is eligible for delivery!`
+    } else {
+        return `Zip code ${zipCode} is not eligible for delivery.`
+    }
+}
 
 
 /* 
@@ -71,8 +77,16 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 */
 
 // CODE HERE
-
-
+const canWeDeliverTwo = zipCode => {
+    for(i = 0; i < deliveryAreaZipCodes.length; i++){
+        if (zipCode === deliveryAreaZipCodes[i]) {
+            return `Zip code ${zipCode} is eligible for delivery!`
+        } else {
+            return `Zip code ${zipCode} is not eligible for delivery.`
+        }
+    }
+}
+// console.log(canWeDeliverTwo(85205))
 //////////////////PROBLEM 3////////////////////
 /* 
     Below is an array of objects that have some
@@ -96,7 +110,7 @@ const deals = [
         desc: '   This deal lasts until the end of March! '
     }
 ]
-
+// console.log(deals)
 /*
     The owner has decided to take the 15% off
     deal down to 10%.
@@ -107,9 +121,8 @@ const deals = [
 */
 
 //CODE HERE
-
-
-
+deals[0].title = deals[0].title.replace('15', '10')
+// console.log(deals)
 /*
     The restaurant is going to continue its
     family deal for another month. 
@@ -124,3 +137,7 @@ const deals = [
 */
 
 //CODE HERE
+
+deals[1].desc = deals[1].desc.replace('March', 'April').trim()
+
+console.log(deals)
