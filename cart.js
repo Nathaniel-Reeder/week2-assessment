@@ -35,8 +35,8 @@ const cart = [
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
-
+const summedPrice = cart.reduce((acc, cur) => acc + cur.price, 0)
+// console.log(summedPrice)
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -55,7 +55,7 @@ const cart = [
 
 //CODE HERE
 
-
+const calcFinalPrice = (cartTotal, couponValue, tax) => (cartTotal * (1 + tax)) - couponValue
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -79,7 +79,11 @@ const cart = [
 
 /*
     TEXT ANSWER HERE
-
+    The restraunt would need the following: 
+    1. Customer name (a string)
+    2. Delivery Address (a string)
+    3. Payment card number (a number)
+    4. If the customer is a member of the rewards club (boolean)
 */
 
 /*
@@ -88,3 +92,10 @@ const cart = [
 */
 
 //CODE HERE
+
+let customerOne = {
+    name: "James Holden",
+    address: "123 House Rd, Citytown, UT",
+    cardNum: 123456789101112,
+    member: true
+}
